@@ -24,6 +24,9 @@ FROM registry.ddbuild.io/images/nvidia-cuda-base:12.9.0
 
 LABEL maintainers="Compute"
 
+# Entrypoint configmap is mounted in the container
+USER root
+
 COPY --from=build /artifacts/nvidia-mig-parted  /usr/bin/nvidia-mig-parted
 COPY --from=build /artifacts/nvidia-mig-manager /usr/bin/nvidia-mig-manager
 COPY --from=build /artifacts/reconfigure-mig.sh /usr/bin/reconfigure-mig.sh
