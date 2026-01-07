@@ -1,6 +1,6 @@
 module devel
 
-go 1.24
+go 1.25.5
 
 require (
 	github.com/NVIDIA/nvidia-container-toolkit v1.17.5
