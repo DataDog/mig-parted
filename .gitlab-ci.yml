@@ -4,3 +4,10 @@ build-docker-image:
   variables:
     IMAGE_NAME: nvidia/k8s-mig-manager
   extends: .build-docker-image
+
+build-merged-nydus-image:
+  needs: ["build-docker-image"]
+  variables:
+    IMAGE_NAME: nvidia/k8s-mig-manager
+    MERGE_PLATFORM: "true"
+  extends: .build-nydus-image
